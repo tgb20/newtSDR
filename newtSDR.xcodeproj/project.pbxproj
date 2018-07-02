@@ -11,6 +11,9 @@
 		43BDFC9C20EA70DA000406B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDFC9B20EA70DA000406B9 /* ViewController.swift */; };
 		43BDFC9E20EA70DA000406B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDFC9D20EA70DA000406B9 /* Assets.xcassets */; };
 		43BDFCA120EA70DA000406B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDFC9F20EA70DA000406B9 /* Main.storyboard */; };
+		43C1BA4120EA8AF900CA919D /* librtlsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C1BA3F20EA8AF800CA919D /* librtlsdr.a */; };
+		43C1BA4220EA8AF900CA919D /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C1BA4020EA8AF900CA919D /* libusb-1.0.a */; };
+		43C1BA4620EA8B2E00CA919D /* rtlsdrwrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C1BA4520EA8B2E00CA919D /* rtlsdrwrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,12 @@
 		43BDFCA020EA70DA000406B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43BDFCA220EA70DA000406B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43BDFCA320EA70DA000406B9 /* newtSDR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newtSDR.entitlements; sourceTree = "<group>"; };
+		43BDFCAF20EA71A1000406B9 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		43BDFD0620EA7734000406B9 /* rtl-sdr_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr_export.h"; sourceTree = "<group>"; };
+		43BDFD0720EA7734000406B9 /* rtl-sdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr.h"; sourceTree = "<group>"; };
+		43C1BA3F20EA8AF800CA919D /* librtlsdr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librtlsdr.a; sourceTree = "<group>"; };
+		43C1BA4020EA8AF900CA919D /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
+		43C1BA4520EA8B2E00CA919D /* rtlsdrwrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rtlsdrwrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43C1BA4220EA8AF900CA919D /* libusb-1.0.a in Frameworks */,
+				43C1BA4120EA8AF900CA919D /* librtlsdr.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +50,7 @@
 			children = (
 				43BDFC9820EA70DA000406B9 /* newtSDR */,
 				43BDFC9720EA70DA000406B9 /* Products */,
+				43BDFD0B20EA7828000406B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,14 +65,35 @@
 		43BDFC9820EA70DA000406B9 /* newtSDR */ = {
 			isa = PBXGroup;
 			children = (
+				43BDFCAA20EA7109000406B9 /* rtl-sdr */,
 				43BDFC9920EA70DA000406B9 /* AppDelegate.swift */,
 				43BDFC9B20EA70DA000406B9 /* ViewController.swift */,
 				43BDFC9D20EA70DA000406B9 /* Assets.xcassets */,
 				43BDFC9F20EA70DA000406B9 /* Main.storyboard */,
 				43BDFCA220EA70DA000406B9 /* Info.plist */,
 				43BDFCA320EA70DA000406B9 /* newtSDR.entitlements */,
+				43C1BA4520EA8B2E00CA919D /* rtlsdrwrapper.swift */,
 			);
 			path = newtSDR;
+			sourceTree = "<group>";
+		};
+		43BDFCAA20EA7109000406B9 /* rtl-sdr */ = {
+			isa = PBXGroup;
+			children = (
+				43C1BA3F20EA8AF800CA919D /* librtlsdr.a */,
+				43C1BA4020EA8AF900CA919D /* libusb-1.0.a */,
+				43BDFCAF20EA71A1000406B9 /* module.modulemap */,
+				43BDFD0620EA7734000406B9 /* rtl-sdr_export.h */,
+				43BDFD0720EA7734000406B9 /* rtl-sdr.h */,
+			);
+			path = "rtl-sdr";
+			sourceTree = "<group>";
+		};
+		43BDFD0B20EA7828000406B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +128,7 @@
 				TargetAttributes = {
 					43BDFC9520EA70DA000406B9 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -133,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43C1BA4620EA8B2E00CA919D /* rtlsdrwrapper.swift in Sources */,
 				43BDFC9C20EA70DA000406B9 /* ViewController.swift in Sources */,
 				43BDFC9A20EA70DA000406B9 /* AppDelegate.swift in Sources */,
 			);
@@ -269,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = newtSDR/newtSDR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -278,8 +314,14 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/newtSDR/rtl-sdr",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = haus.orange.newtSDR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/newtSDR/rtl-sdr";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -288,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = newtSDR/newtSDR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -297,8 +340,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/newtSDR/rtl-sdr",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = haus.orange.newtSDR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/newtSDR/rtl-sdr";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

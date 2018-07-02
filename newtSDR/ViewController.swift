@@ -13,7 +13,10 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let rtl = RTLSDR()
+        
+        print(rtl.getDeviceCount())
+        
     }
 
     override var representedObject: Any? {
@@ -24,4 +27,3 @@ class ViewController: NSViewController {
 
 
 }
-

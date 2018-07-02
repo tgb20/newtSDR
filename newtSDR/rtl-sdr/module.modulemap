@@ -1,0 +1,4 @@
+module Librtlsdr [system][extern_c] {
+    header "rtl-sdr.h"
+    export *
+}

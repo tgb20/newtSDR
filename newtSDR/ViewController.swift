@@ -15,7 +15,16 @@ class ViewController: NSViewController {
 
         let rtl = RTLSDR()
         
-        print(rtl.getDeviceCount())
+        
+        let deviceCount = rtl.getDeviceCount()
+        
+        if(deviceCount > 0){
+            let device0Name = rtl.getDeviceName(index: 0)
+            print(device0Name)
+        }else{
+            print("No Compatible SDR Devices Detected")
+        }
+        
         
     }
 

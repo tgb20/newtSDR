@@ -1,12 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <plugIn identifier="com.apple.MapKitIBPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="newtSDR" customModuleProvider="target"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
@@ -673,45 +678,124 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
-                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="newtSDR" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="newtSDR by Jacob Bashista" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="1280" height="720"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-			<connections>
+                        <value key="minSize" type="size" width="1280" height="720"/>
+                        <value key="maxSize" type="size" width="1280" height="720"/>
+                        <toolbar key="toolbar" implicitIdentifier="2DD34D7B-FE8A-46AC-A0A1-139BF4E234E9" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="98N-p9-u1y">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="186-ju-cnn"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="Pho-jh-S6W"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="7Fq-Hz-6pw"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="qqu-Ir-NSL"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="G59-1d-K7o"/>
+                                <toolbarItem implicitItemIdentifier="B0788AF7-B0C2-4688-8269-B1620EE70E40" label="Custom View" paletteLabel="Custom View" image="NSActionTemplate" id="XXB-HD-cGL">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="42" height="28"/>
+                                    <size key="maxSize" width="50" height="32"/>
+                                    <button key="view" verticalHuggingPriority="750" id="Yce-4S-dQB">
+                                        <rect key="frame" x="0.0" y="14" width="82" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSActionTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aGZ-LV-dvN">
+                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <action selector="settingsButtonClicked:" target="B8D-0N-5wS" id="w6V-4v-vV4"/>
+                                            </connections>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="XXB-HD-cGL"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                        <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="4me-89-hXi" kind="relationship" relationship="window.shadowedContentViewController" id="Ux1-uK-bP7"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Split View Controller-->
+        <scene sceneID="YkK-Jk-BaX">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <splitViewController id="4me-89-hXi" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem behavior="sidebar" id="kCc-dS-nFb"/>
+                        <splitViewItem id="j3o-fG-P5u"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="O64-4K-4fV">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="4me-89-hXi" id="GP8-t6-EJE"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="O64-4K-4fV" id="Oid-m7-l2P"/>
+                        <segue destination="AZT-LU-5Bx" kind="relationship" relationship="splitItems" id="GMc-l1-Lv9"/>
+                        <segue destination="plO-HR-UlG" kind="relationship" relationship="splitItems" id="PRd-ax-IlK"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="BRL-8u-aS8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116" y="1006"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="q9n-PQ-TVU">
+            <objects>
+                <viewController id="AZT-LU-5Bx" customClass="SettingsViewController" customModule="newtSDR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="WhG-Jc-jY1">
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="650"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="rn6-oZ-eKq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-354" y="1610"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jBS-hv-3Ah">
+            <objects>
+                <viewController id="plO-HR-UlG" sceneMemberID="viewController">
+                    <view key="view" id="51H-ZZ-nFp">
+                        <rect key="frame" x="0.0" y="0.0" width="902" height="650"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <mapView mapType="standard" pitchEnabled="NO" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHa-Us-NZG">
+                                <rect key="frame" x="0.0" y="0.0" width="902" height="650"/>
+                            </mapView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="gHa-Us-NZG" firstAttribute="top" secondItem="51H-ZZ-nFp" secondAttribute="top" id="KHk-nh-sBj"/>
+                            <constraint firstAttribute="bottom" secondItem="gHa-Us-NZG" secondAttribute="bottom" id="Qk8-xX-8QR"/>
+                            <constraint firstAttribute="trailing" secondItem="gHa-Us-NZG" secondAttribute="trailing" id="UtV-fM-suZ"/>
+                            <constraint firstItem="gHa-Us-NZG" firstAttribute="leading" secondItem="51H-ZZ-nFp" secondAttribute="leading" id="ypC-Tn-Kci"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="DyQ-lL-74g" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="407" y="1610"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+    </resources>
 </document>

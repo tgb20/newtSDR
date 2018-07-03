@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  Settings.swift
 //  newtSDR
 //
 //  Created by Jacob Bashista on 7/2/18.
@@ -8,11 +8,11 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class SettingsViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let rtl = RTLSDR()
         
         
@@ -27,12 +27,5 @@ class ViewController: NSViewController {
         
         
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
+    
 }

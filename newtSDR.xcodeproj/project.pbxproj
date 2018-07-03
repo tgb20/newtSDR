@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431A93A720EAEA7500C3458F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A93A620EAEA7500C3458F /* SettingsViewController.swift */; };
+		431A93A920EAEB5400C3458F /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A93A820EAEB5400C3458F /* MainWindowController.swift */; };
 		43BDFC9A20EA70DA000406B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDFC9920EA70DA000406B9 /* AppDelegate.swift */; };
-		43BDFC9C20EA70DA000406B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDFC9B20EA70DA000406B9 /* ViewController.swift */; };
 		43BDFC9E20EA70DA000406B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BDFC9D20EA70DA000406B9 /* Assets.xcassets */; };
 		43BDFCA120EA70DA000406B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BDFC9F20EA70DA000406B9 /* Main.storyboard */; };
 		43C1BA4120EA8AF900CA919D /* librtlsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C1BA3F20EA8AF800CA919D /* librtlsdr.a */; };
@@ -17,13 +18,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431A93A620EAEA7500C3458F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		431A93A820EAEB5400C3458F /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		43BDFC9620EA70DA000406B9 /* newtSDR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newtSDR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BDFC9920EA70DA000406B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43BDFC9B20EA70DA000406B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		43BDFC9D20EA70DA000406B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43BDFCA020EA70DA000406B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43BDFCA220EA70DA000406B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43BDFCA320EA70DA000406B9 /* newtSDR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newtSDR.entitlements; sourceTree = "<group>"; };
 		43BDFCAF20EA71A1000406B9 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		43BDFD0620EA7734000406B9 /* rtl-sdr_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr_export.h"; sourceTree = "<group>"; };
 		43BDFD0720EA7734000406B9 /* rtl-sdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr.h"; sourceTree = "<group>"; };
@@ -67,12 +68,12 @@
 			children = (
 				43BDFCAA20EA7109000406B9 /* rtl-sdr */,
 				43BDFC9920EA70DA000406B9 /* AppDelegate.swift */,
-				43BDFC9B20EA70DA000406B9 /* ViewController.swift */,
 				43BDFC9D20EA70DA000406B9 /* Assets.xcassets */,
 				43BDFC9F20EA70DA000406B9 /* Main.storyboard */,
 				43BDFCA220EA70DA000406B9 /* Info.plist */,
-				43BDFCA320EA70DA000406B9 /* newtSDR.entitlements */,
 				43C1BA4520EA8B2E00CA919D /* rtlsdrwrapper.swift */,
+				431A93A620EAEA7500C3458F /* SettingsViewController.swift */,
+				431A93A820EAEB5400C3458F /* MainWindowController.swift */,
 			);
 			path = newtSDR;
 			sourceTree = "<group>";
@@ -129,6 +130,11 @@
 					43BDFC9520EA70DA000406B9 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -168,7 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C1BA4620EA8B2E00CA919D /* rtlsdrwrapper.swift in Sources */,
-				43BDFC9C20EA70DA000406B9 /* ViewController.swift in Sources */,
+				431A93A720EAEA7500C3458F /* SettingsViewController.swift in Sources */,
+				431A93A920EAEB5400C3458F /* MainWindowController.swift in Sources */,
 				43BDFC9A20EA70DA000406B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +312,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = newtSDR/newtSDR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V7CWSQZK69;
@@ -331,7 +337,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = newtSDR/newtSDR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V7CWSQZK69;
